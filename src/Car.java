@@ -1,13 +1,13 @@
-public class Car {
+import org.jetbrains.annotations.NotNull;
 
-    public String modelName;
-    public int wheelsCount;
-
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
+public class Car extends WheeledVehicle implements Engine {
+    public Car(@NotNull String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
     }
 
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
+    @Override
+    public void check() {
+        super.check();
+        checkEngine();
     }
 }
